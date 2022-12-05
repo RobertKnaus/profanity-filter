@@ -7,7 +7,7 @@
 
 Fork of the original profanity-filter. Install with:
 
-	pip install -e https://github.com/lwneal/profanity-filter
+	pip install git+https://github.com/lwneal/profanity-filter
 	python -m spacy download en
 
 ## Table of contents
