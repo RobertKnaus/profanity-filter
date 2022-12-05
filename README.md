@@ -35,7 +35,6 @@ Fork of the original profanity-filter. Install with:
          * [Using as a part of Spacy pipeline](#using-as-a-part-of-spacy-pipeline)
          * [Customizations](#customizations)
          * [Console Executable](#console-executable)
-         * [RESTful web service](#restful-web-service)
       * [Installation](#installation)
          * [Basic installation](#basic-installation)
          * [Deep analysis](#deep-analysis-1)
@@ -47,13 +46,8 @@ Fork of the original profanity-filter. Install with:
       * [Troubleshooting](#troubleshooting)
       * [Credits](#credits)
 
-<!-- Added by: rominf, at: Сб мая 18 15:06:37 MSK 2019 -->
-
-<!--te-->
-
 ## Overview
-`profanity-filter` is a universal library for detecting and filtering profanity. Support for English and Russian is 
-included.
+`profanity-filter` is a universal library for detecting and filtering profanity. Support for English is included.
 
 ### Features
 1. Full text or individual words censoring.

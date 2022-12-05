@@ -13,7 +13,6 @@ _yaml = YAML(typ='safe')
 # noinspection PyTypeChecker
 class Config(BaseModel):
     analyses: List[AnalysisType] = list(AnalysisType)
-    cache_redis_connection_url: Optional[str] = None
     censor_char: str = '*'
     censor_whole_words: bool = True
     languages: List[Language] = ['en']

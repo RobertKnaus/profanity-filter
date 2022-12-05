@@ -16,7 +16,6 @@ from tests.conftest import (create_profane_word_dictionaries, TEST_STATEMENT, CL
 
 def compare_settings(pf0: ProfanityFilter, pf1: ProfanityFilter) -> None:
     assert pf0.analyses == pf1.analyses
-    assert pf0.cache_redis_connection_url == pf1.cache_redis_connection_url
     assert pf0.censor_char == pf1.censor_char
     assert pf0.custom_profane_word_dictionaries == pf1.custom_profane_word_dictionaries
     assert pf0.extra_profane_word_dictionaries == pf1.extra_profane_word_dictionaries
