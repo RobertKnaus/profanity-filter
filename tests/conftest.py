@@ -3,7 +3,6 @@ from copy import deepcopy
 from dataclasses import replace, dataclass
 from typing import Tuple
 
-import dill
 import pytest
 import spacy.language
 from ordered_set import OrderedSet
@@ -18,7 +17,6 @@ class Config:
     analyses: AnalysesTypes = frozenset()
     censor_whole_words: bool = True
     deep_copy: bool = False
-    dill: bool = False
     languages: Tuple[Language, ...] = ('en', )
 
 
@@ -44,8 +42,6 @@ def pf(request) -> ProfanityFilter:
             pytest.skip(f"Couldn't initialize {analysis.value} analysis")
     if config.deep_copy:
         result = deepcopy(result)
-    if config.dill:
-        result = dill.loads(dill.dumps(result))
     return result
 
 
@@ -60,9 +56,9 @@ def with_config(config: Config):
     def decorator(f):
         return pytest.mark.parametrize(
             'pf',
-            [config, replace(config, deep_copy=True), replace(config, dill=True)],
+            [config, replace(config, deep_copy=True)],
             indirect=True,
-            ids=['new', 'deep_copy', 'dill'],
+            ids=['new', 'deep_copy'],
         )(f)
 
     return decorator

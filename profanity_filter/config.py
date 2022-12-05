@@ -1,13 +1,11 @@
+import yaml
 from typing import List, Optional
 
 from pathlib import Path
 from pydantic import BaseModel
-from ruamel.yaml import YAML
 
 from profanity_filter.types_ import AnalysisType, Language, PathOrStr
 
-
-_yaml = YAML(typ='safe')
 
 
 # noinspection PyTypeChecker
@@ -20,7 +18,8 @@ class Config(BaseModel):
 
     @classmethod
     def from_yaml(cls, path: PathOrStr) -> 'Config':
-        config_dict = _yaml.load(open(str(path)))
+        with open(str(path), 'r') as f:
+            config_dict = yaml.safe_load(f)
         if config_dict is None:
             config_dict = {}
         if 'analyses' in config_dict:
@@ -35,7 +34,7 @@ class Config(BaseModel):
         config_dict = self.dict(exclude=set('analyses'))
         config_dict['analyses'] = [analysis.value for analysis in self.analyses]
         with open(str(path), 'w') as f:
-            _yaml.dump(config_dict, f)
+            yaml.dump(config_dict, f)
 
 
 DEFAULT_CONFIG = Config()

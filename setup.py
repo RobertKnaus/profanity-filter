@@ -14,6 +14,7 @@ install_requires = \
  'ordered-set>=3.0',
  'poetry-version>=0.1.3',
  'pydantic>=1.3',
+ 'pyyaml',
  'spacy>=2.0']
 
 entry_points = \
