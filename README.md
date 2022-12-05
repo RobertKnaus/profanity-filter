@@ -10,6 +10,17 @@ Fork of the original profanity-filter. Install with:
 	pip install git+https://github.com/lwneal/profanity-filter
 	python -m spacy download en
 
+
+## Test Usage
+
+	python -m profanity_filter.console --show -t "The seven words you can never say on television are: shit piss fuck cunt cocksucker motherfucker and tits."
+
+	Censored text:
+
+	The seven words you can never say on television are: **** **** **** **** ********** ************ and ****.
+
+
+
 ## Table of contents
 <!--ts-->
    * [profanity-filter: A Python library for detecting and filtering profanity](#profanity-filter-a-python-library-for-detecting-and-filtering-profanity)
