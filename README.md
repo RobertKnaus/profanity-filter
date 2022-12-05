@@ -3,8 +3,12 @@
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/profanity-filter.svg)
 [![PyPI](https://img.shields.io/pypi/v/profanity-filter.svg)](https://pypi.org/project/profanity-filter/)
 
-## Archived
-This library is no longer a priority for me. Feel free to fork it.
+## Profanity Filter
+
+Fork of the original profanity-filter. Install with:
+
+	pip install -e https://github.com/lwneal/profanity-filter
+	python -m spacy download en
 
 ## Table of contents
 <!--ts-->
